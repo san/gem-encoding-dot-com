@@ -6,7 +6,7 @@ module EncodingDotCom
   # The queue is stateless and can be reused for multiple requests.
   class Queue
     # Where encoding.com expects messages to be posted to.
-    ENDPOINT = "http://manage.encoding.com/"
+    ENDPOINT = "https://manage.encoding.com/"
 
     # Creates a new facacde given an encoding.com user id & key, and
     # an HTTP library implementation.
@@ -15,7 +15,7 @@ module EncodingDotCom
     # +user_key+:: your encoding.com secret key
     # +http+:: should respond to post, and return an object responding to
     #          +#code+ and +#to_s+
-    def initialize(user_id, user_key, http=HttpAdapters::CurbAdapter.new)
+    def initialize(user_id, user_key, http=HttpAdapters::NetHttpAdapter.new)
       @user_id, @user_key, @http = user_id, user_key, http
     end
 
