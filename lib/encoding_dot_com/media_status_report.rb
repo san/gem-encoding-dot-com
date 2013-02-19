@@ -21,10 +21,10 @@ module EncodingDotCom
       @notify_url = (node / "notifyurl").text
 
       # Different xpath to handle multiple created nodes in document (e.g. in format sections)
-      @created = parse_time_node(node.xpath(node / 'created'))
-      @started = parse_time_node(node.xpath(node / 'started'))
-      @finished = parse_time_node(node.xpath(node / 'finished'))
-      @downloaded = parse_time_node(node.xpath(node / 'downloaded'))
+      @created = parse_time_node(node.xpath('response/created'))
+      @started = parse_time_node(node.xpath('response/started'))
+      @finished = parse_time_node(node.xpath('response/finished'))
+      @downloaded = parse_time_node(node.xpath('response/downloaded'))
     end
 
     private
