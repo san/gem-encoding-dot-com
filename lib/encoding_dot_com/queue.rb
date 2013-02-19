@@ -76,6 +76,11 @@ module EncodingDotCom
         q.mediaid media_id
       end
     end
+
+    def batch_status(media_ids) #:nodoc:
+      response = make_request("GetStatus") {|q| q.mediaid media_id }
+      response.xpath("/response/job").map {|node| MediaStatusReport.new(node) }
+    end
     
     # Returns a MediaStatusReport object containing the status properties of 
     # an entry in the encoding.com queue (much like full_status, but processed 
