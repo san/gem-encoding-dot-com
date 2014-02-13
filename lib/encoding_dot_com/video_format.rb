@@ -1,10 +1,12 @@
 module EncodingDotCom
   class VideoFormat < Format #:nodoc:
-    ALLOWED_OUTPUT_FORMATS = %w{flv fl9 wmv 3gp mp4 m4v ipod iphone iphone_stream ipad ipad_stream appletv psp zune mp3 wma wowza_multibitrate}.freeze
+    ALLOWED_OUTPUT_FORMATS = %w{flv fl9 wmv 3gp mp4 m4v ipod iphone iphone_stream ipad ipad_stream appletv psp zune mp3 wma wowza wowza_multibitrate}.freeze
     
-    allowed_attributes :output, :size, :bitrate, :framerate, :framerates, :video_codec, :audio_bitrate, :audio_sample_rate, :audio_codec, :audio_channels_number, :profile,
-      :audio_volume, :maxrate, :minrate, :bufsize, :keyframe, :keyframes, :start, :duration, :rc_init_occupancy, :crop_top, :crop_left, :crop_right, :crop_bottom,
-      :logo_source, :logo_x, :logo_y, :logo_mode, :logo_threshold, :bitrates
+    allowed_attributes :output, :size, :sizes, :bitrate, :framerate, :framerates, :video_codec, 
+                       :audio_bitrate, :audio_sample_rate, :audio_codec, :audio_channels_number, :profile,
+                       :audio_volume, :maxrate, :minrate, :bufsize, :keyframe, :keyframes, :start, :duration, 
+                       :rc_init_occupancy, :crop_top, :crop_left, :crop_right, :crop_bottom,
+                       :logo_source, :logo_x, :logo_y, :logo_mode, :logo_threshold, :bitrates, :file_extension
     boolean_attributes :two_pass, :cbr, :deinterlacing, :add_meta, :turbo, :pack_files, :twin_turbo
     
     def initialize(attributes={})

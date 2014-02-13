@@ -17,6 +17,10 @@ module EncodingDotCom
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         
         request = Net::HTTP::Post.new(uri.request_uri)
+        
+        puts "XML Request"
+        puts parameters.inspect
+        
         request.set_form_data(parameters)
         
         response = http.request(request)

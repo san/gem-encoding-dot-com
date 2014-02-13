@@ -80,4 +80,10 @@ module EncodingDotCom
   
   module AttributeRestrictionsThumbnail #:nodoc:
   end
+
+  module AttributeRestrictionsWowza #:nodoc:
+  end
+
+  module AttributeRestrictionsWowza_multibitrate #:nodoc:
+  end
 end
