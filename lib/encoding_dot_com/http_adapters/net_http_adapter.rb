@@ -18,8 +18,8 @@ module EncodingDotCom
         
         request = Net::HTTP::Post.new(uri.request_uri)
         
-        puts "XML Request"
-        puts parameters.inspect
+        # puts "XML Request"
+        # puts parameters.inspect
         
         request.set_form_data(parameters)
         
