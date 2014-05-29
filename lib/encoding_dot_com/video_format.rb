@@ -7,8 +7,8 @@ module EncodingDotCom
                        :audio_volume, :maxrate, :minrate, :bufsize, :keyframe, :keyframes, :start, :duration, 
                        :rc_init_occupancy, :crop_top, :crop_left, :crop_right, :crop_bottom,
                        :logo_source, :logo_x, :logo_y, :logo_mode, :logo_threshold, :bitrates, :file_extension,
-                       :audio_sync
-    boolean_attributes :two_pass, :cbr, :deinterlacing, :add_meta, :turbo, :pack_files, :twin_turbo
+                       :audio_sync, :segment_duration, :segmenter, :force_keyframes
+    boolean_attributes :two_pass, :cbr, :hard_cbr, :deinterlacing, :add_meta, :turbo, :pack_files, :twin_turbo
     
     def initialize(attributes={})
       @attributes = attributes
